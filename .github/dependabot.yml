@@ -1,0 +1,28 @@
+name: ios CI
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  ui-tests:
+    strategy:
+      matrix:
+        api-level: [28]
+        target: [default]
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install the Emulator
+        run: |
+          npm install
+        shell: bash
+
+      - name: Upload test report
+        uses: actions/upload-artifact@v2
+        with:
+          name: unit_test_report
+          path: /Users/runner/work/
+        
