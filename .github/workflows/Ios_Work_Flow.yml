@@ -24,4 +24,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: unit_test_report
-          path: /Users/runner/work/
+          path: /Users/runner/work/ios-test-app/ios-test-app/build/Release-iphonesimulator/
